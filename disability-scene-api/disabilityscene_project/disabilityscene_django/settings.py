@@ -83,8 +83,7 @@ DATABASES = {
         'NAME': 'disabilityscene',
         'USER': 'disabilitysceneuser',
         'PASSWORD': 'disabilityscene',
-        'HOST': '0.0.0.0',
-        'PORT': os.environ.get('DB_PORT', '8000')
+        'HOST': 'db'
     }
 }
 
