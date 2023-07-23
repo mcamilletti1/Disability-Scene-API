@@ -84,7 +84,7 @@ DATABASES = {
         'USER': 'disabilitysceneuser',
         'PASSWORD': 'disabilityscene',
         'HOST': 'localhost',
-        'PORT': os.environ.get('DB_PORT', '5432')
+        'PORT': os.environ.get('DB_PORT', '')
     }
 }
 
