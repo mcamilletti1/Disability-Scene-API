@@ -82,10 +82,10 @@ WSGI_APPLICATION = 'disabilityscene_django.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'disabilityscene',
-        'USER': 'disabilitysceneuser',
-        'PASSWORD': 'disabilityscene',
-        'HOST': 'localhost',
+        'NAME': 'lbjapgks',
+        'USER': 'lbjapgks',
+        'PASSWORD': 'vtVaUz6Uvczl1F0f4MhbfoZo_t1jXT_E',
+        'HOST': 'stampy.db.elephantsql.com',
     }
 }
 
