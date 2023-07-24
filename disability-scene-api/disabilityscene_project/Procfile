@@ -1,1 +1,1 @@
-web: gunicorn disabilityscene_django.wsgi
+web: gunicorn disabilityscene_django.wsgi:application
