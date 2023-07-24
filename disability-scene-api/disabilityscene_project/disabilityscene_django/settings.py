@@ -83,7 +83,7 @@ DATABASES = {
         'NAME': 'disabilityscene',
         'USER': 'disabilitysceneuser',
         'PASSWORD': 'disabilityscene',
-        'HOST': '0.0.0.0'
+        'HOST': 'localhost'
     }
 }
 
