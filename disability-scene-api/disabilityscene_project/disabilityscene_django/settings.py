@@ -86,7 +86,6 @@ DATABASES = {
         'USER': 'disabilitysceneuser',
         'PASSWORD': 'disabilityscene',
         'HOST': 'localhost',
-        'PORT': '5432'
     }
 }
 
