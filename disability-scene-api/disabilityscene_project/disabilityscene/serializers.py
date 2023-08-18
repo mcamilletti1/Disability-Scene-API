@@ -30,7 +30,8 @@ class MovieSerializer(serializers.HyperlinkedModelSerializer):
 class ReviewSerializer(serializers.HyperlinkedModelSerializer):
 
     movie_id = serializers.PrimaryKeyRelatedField(
-        queryset=Movie.objects.all()
+        queryset=Movie.objects.all(),
+        source='movie'
     )
 
     class Meta:
