@@ -36,8 +36,7 @@ class ReviewSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = Review
-        fields = ('movie_id', 'title', 'reviewer_name', 'review_text', 'date', 'casting_score', 'character_score', 'originality_score', 'accuracy_score')
+        fields = ('id', 'movie_id', 'title', 'reviewer_name', 'review_text', 'date', 'casting_score', 'character_score', 'originality_score', 'accuracy_score')
 
     def create(self, validated_data):
-        validated_data.pop('id', None)
         return Review.objects.create(**validated_data)
