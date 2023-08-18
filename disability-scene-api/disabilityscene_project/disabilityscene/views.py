@@ -1,8 +1,11 @@
 from django.shortcuts import render
-from .models import Movie, Cast, Review
+import rest_framework
 from rest_framework import generics
+from .models import Movie, Cast, Review
 from .serializers import MovieSerializer, CastSerializer, ReviewSerializer
-from rest_framework.filters import SearchFilter, OrderingFilter 
+from rest_framework.filters import SearchFilter, OrderingFilter
+from rest_framework import permissions
+from rest_framework.permissions import AllowAny
 
 
 # Create your views here.
@@ -33,10 +36,14 @@ class CastDetail(generics.RetrieveUpdateDestroyAPIView):
 class ReviewList(generics.ListCreateAPIView):
     queryset = Review.objects.all()
     serializer_class = ReviewSerializer
+    permission_classes = [AllowAny]
+
 
 class ReviewDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Review.objects.all()
     serializer_class = ReviewSerializer
+    permission_classes = [AllowAny]
+
 
 class MovieCastList(generics.ListAPIView):
     serializer_class = CastSerializer
@@ -45,7 +52,8 @@ class MovieCastList(generics.ListAPIView):
         movie_id = self.kwargs['pk']
 
         return Cast.objects.filter(movie__id=movie_id)
-    
+
+
 class MovieReviewsList(generics.ListAPIView):
     serializer_class = ReviewSerializer
 
@@ -53,7 +61,7 @@ class MovieReviewsList(generics.ListAPIView):
         movie_id = self.kwargs['pk']
 
         return Review.objects.filter(movie__id=movie_id)
-    
+
 
 class MovieTypeSearch(generics.ListAPIView):
     serializer_class = MovieSerializer
@@ -62,5 +70,3 @@ class MovieTypeSearch(generics.ListAPIView):
         movie_type = self.kwargs['movie_type']
 
         return Movie.objects.filter(media_type__iexact=movie_type)
-    
-
