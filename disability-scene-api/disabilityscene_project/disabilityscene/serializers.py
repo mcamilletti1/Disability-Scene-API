@@ -29,14 +29,10 @@ class MovieSerializer(serializers.HyperlinkedModelSerializer):
 
 class ReviewSerializer(serializers.HyperlinkedModelSerializer):
 
-    movie_id = serializers.PrimaryKeyRelatedField(
-        queryset=Movie.objects.all(),
-        source='movie'
-    )
 
     class Meta:
         model = Review
-        fields = ('id', 'movie_id', 'title', 'reviewer_name', 'review_text', 'date', 'casting_score', 'character_score', 'originality_score', 'accuracy_score')
+        fields = ('id', 'movie', 'title', 'reviewer_name', 'review_text', 'date', 'casting_score', 'character_score', 'originality_score', 'accuracy_score')
 
     def create(self, validated_data):
         return Review.objects.create(**validated_data)
