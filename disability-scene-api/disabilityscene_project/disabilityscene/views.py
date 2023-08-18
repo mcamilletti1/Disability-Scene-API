@@ -3,7 +3,7 @@ from .models import Movie, Cast, Review
 from rest_framework import generics
 from .serializers import MovieSerializer, CastSerializer, ReviewSerializer
 from rest_framework.filters import SearchFilter, OrderingFilter 
-from rest_framework.permissions import IsAuthenticated
+from rest_framework.permissions import AllowAny
 
 
 # Create your views here.
@@ -34,7 +34,7 @@ class CastDetail(generics.RetrieveUpdateDestroyAPIView):
 class ReviewList(generics.ListCreateAPIView):
     queryset = Review.objects.all()
     serializer_class = ReviewSerializer
-    permission_classes = [IsAuthenticated]
+    permission_classes = [AllowAny]
 
 class ReviewDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Review.objects.all()
