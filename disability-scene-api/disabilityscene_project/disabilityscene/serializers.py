@@ -29,6 +29,7 @@ class MovieSerializer(serializers.HyperlinkedModelSerializer):
 
 class ReviewSerializer(serializers.HyperlinkedModelSerializer):
 
+    movie = serializers.PrimaryKeyRelatedField(queryset=Movie.objects.all())
 
     class Meta:
         model = Review
