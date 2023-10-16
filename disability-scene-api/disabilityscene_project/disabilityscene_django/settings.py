@@ -82,10 +82,10 @@ WSGI_APPLICATION = 'disabilityscene_django.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'lbjapgks',
-        'USER': 'lbjapgks',
-        'PASSWORD': 'vtVaUz6Uvczl1F0f4MhbfoZo_t1jXT_E',
-        'HOST': 'stampy.db.elephantsql.com',
+        'NAME': 'disability_scene',
+        'USER': 'disability_sceneuser',
+        'PASSWORD': 'disabilityscene',
+        'HOST': 'localhost',
     }
 }
 
@@ -146,5 +146,5 @@ CORS_ALLOW_ALL_ORIGINS = True
 CSRF_TRUSTED_ORIGINS = [
     'http://localhost:5173',
     'https://disabilityscene.com',
-    'https://disability-scene-api-production.up.railway.app/'
+    'https://disability-scene-api-production.up.railway.app'
 ]

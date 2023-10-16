@@ -1,6 +1,7 @@
 from rest_framework import serializers
 from . models import *
 
+
 class CastSerializer(serializers.HyperlinkedModelSerializer):
     movie = serializers.PrimaryKeyRelatedField(
         queryset = Movie.objects.all(),

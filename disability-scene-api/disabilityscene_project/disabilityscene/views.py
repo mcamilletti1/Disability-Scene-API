@@ -4,9 +4,12 @@ from rest_framework import generics
 from .serializers import MovieSerializer, CastSerializer, ReviewSerializer
 from rest_framework.filters import SearchFilter, OrderingFilter 
 from rest_framework.permissions import AllowAny
-
+from rest_framework.response import Response
+from rest_framework.decorators import api_view
 
 # Create your views here.
+
+
 
 
 class MovieList(generics.ListCreateAPIView):

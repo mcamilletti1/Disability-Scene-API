@@ -2,7 +2,7 @@ from django.db import models
 
 # Create your models here.
 
-   
+
 
 class Cast(models.Model):
     name = models.CharField(default="Name Not Available", max_length=1000)
